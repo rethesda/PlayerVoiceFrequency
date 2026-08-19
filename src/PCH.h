@@ -1,19 +1,18 @@
 #pragma once
 
-#pragma warning(push)
-#include "F4SE/F4SE.h"
-#include "RE/Fallout.h"
-
-#ifdef NDEBUG
 #include <spdlog/sinks/basic_file_sink.h>
-#else
 #include <spdlog/sinks/msvc_sink.h>
-#endif
+#include <spdlog/spdlog.h>
+
+#pragma warning(push)
+#include <F4SE/F4SE.h>
+#include <RE/Fallout.h>
+#include <REX/REX.h>
 #pragma warning(pop)
-#pragma warning(disable:4100);
 
-#define DLLEXPORT __declspec(dllexport)
-
-namespace logger = F4SE::log;
+#include <Windows.h>
+#undef ERROR
+#undef max
+#undef min
 
 using namespace std::literals;
